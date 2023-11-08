@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        Module = {
+            onRuntimeInitialized : function() {
+                reqForm.arg1.value = 1.5 ;
+                reqForm.arg2.value = 3.5 ;
+                reqForm.arg3.value = 0.5 ;
+            }
+        } ;
+    
+        function getResult(event) {
+            let arg1 = parseFloat(reqForm.arg1.value) ;
+            let arg2 = parseFloat(reqForm.arg2.value) ;
+            let arg3 = parseFloat(reqForm.arg3.value) ;
+    
+            let result = Module.cFunction(arg1, arg2, arg3) ;
+    
+            console.log(result) ;
+    
+            reqForm.result.value = result ;
+        }
+    </script>
+    <script src="main.js"></script>
+</head>
+<body>
+    <form method id="reqForm" onsubmit="return false ;">
+        <input type="text" name="arg1" value="" size="3"> + 
+        <input type="text" name="arg2" value="" size="3"> * 
+        <input type="text" name="arg3" value="" size="3"> =
+        <input type="text" name="result" value="" size="3">
+        <button onclick="getResult(event) ;">Excute</button>
+    </form>
+</body>
+</html>
