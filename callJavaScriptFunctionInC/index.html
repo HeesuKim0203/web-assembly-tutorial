@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        Module = {
+            onRuntimeInitialized : function() {
+                Module.callJs() ;
+            }
+        }
+
+        function jsFunction(subject, msg) {
+            document.getElementById('div').innerText = subject ;
+            document.getElementById('title').innerText = msg ;
+        }
+    </script>
+    <script src="main.js"></script>
+</head>
+<body>
+    [ Title ]
+    <div id="div"></div>
+    <br>
+    [ Description ]
+    <div id="title"></div>
+</body>
+</html>
